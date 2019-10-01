@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              tools:context=".Drawer">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:id="@+id/splash"
+                  android:visibility="gone"
+                  android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_ola_cabs"/>
+    </LinearLayout>
+    <include layout="@layout/activity_start_map"/>
+
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:id="@+id/StartINtent"
+        >
+            <fragment android:id="@+id/autocomplete_fragment"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            />
+
+        </android.support.v7.widget.CardView>
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+                  xmlns:map="http://schemas.android.com/apk/res-auto"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/map"
+                  tools:context=".MapsActivity"
+                  android:name="com.google.android.gms.maps.SupportMapFragment" android:layout_alignParentStart="true"
+                  android:layout_alignParentTop="true">
+
+
+        </fragment>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/crdVarifyOtp"
+                android:layout_marginBottom="-3dp"
+
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="0dp" android:layout_alignParentEnd="true" android:layout_marginEnd="0dp">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/idRecyclerViewHorizontalList"
+                    android:layout_width="wrap_content"
+                    android:paddingRight="16dp"
+                    android:layout_height="wrap_content"
+            />
+        </LinearLayout>
+        <android.support.v7.widget.CardView
+                android:id="@+id/crdVarifyOtp"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/black"
+                android:background="@android:color/black"
+                android:isScrollContainer="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="1.0"
+                android:layout_marginBottom="0dp" app:layout_constraintBottom_toBottomOf="parent">
+
+
+
+
+            <TextView android:layout_width="wrap_content"
+                      android:id="@+id/txtNextOtp"
+                      android:layout_height="wrap_content"
+                      android:text="Book Now"
+                      android:padding="12dp"
+                      android:textColor="@color/next_Color"
+                      android:gravity="center"
+                      android:layout_gravity="center"
+                      android:textSize="18dp"
+            />
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view_slide"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/navigation_menu" />
+</LinearLayout>

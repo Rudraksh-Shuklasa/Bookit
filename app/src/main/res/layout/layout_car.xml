@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content">
+
+
+
+
+    <android.support.v7.widget.CardView android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:clickable="false"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp">
+
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingTop="4dp"
+                      android:paddingRight="15dp"
+                      android:paddingLeft="15dp"
+                      android:gravity="center"
+                      android:clickable="false"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+        >
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:text="5 Min"
+                      android:id="@+id/txt_waiting_time"
+                      android:padding="3dp"
+                      android:clickable="false"
+                      android:textColor="@android:color/black"
+                      android:textSize="14dp"/>
+            <ImageButton android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                         android:id="@+id/Car_img"
+                         android:clickable="false"
+                         android:background="@drawable/car_selected_statelist"
+                       android:src="@drawable/ic_car"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:padding="3dp"
+                      android:clickable="false"
+                      android:id="@+id/txt_car_type_name"
+                      android:text="Micro"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>
